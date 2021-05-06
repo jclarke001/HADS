@@ -1,0 +1,11 @@
+C:\Users\julen\source\repos\Coordinador\Coordinador\bin\Coordinador.dll.config
+C:\Users\julen\source\repos\Coordinador\Coordinador\bin\Coordinador.dll
+C:\Users\julen\source\repos\Coordinador\Coordinador\bin\Coordinador.pdb
+C:\Users\julen\source\repos\Coordinador\Coordinador\bin\Coordinador.xml
+C:\Users\julen\source\repos\Coordinador\Coordinador\obj\Debug\Coordinador.vbprojAssemblyReference.cache
+C:\Users\julen\source\repos\Coordinador\Coordinador\obj\Debug\Coordinador.Resources.resources
+C:\Users\julen\source\repos\Coordinador\Coordinador\obj\Debug\Coordinador.vbproj.GenerateResource.cache
+C:\Users\julen\source\repos\Coordinador\Coordinador\obj\Debug\Coordinador.vbproj.CoreCompileInputs.cache
+C:\Users\julen\source\repos\Coordinador\Coordinador\obj\Debug\Coordinador.dll
+C:\Users\julen\source\repos\Coordinador\Coordinador\obj\Debug\Coordinador.xml
+C:\Users\julen\source\repos\Coordinador\Coordinador\obj\Debug\Coordinador.pdb
