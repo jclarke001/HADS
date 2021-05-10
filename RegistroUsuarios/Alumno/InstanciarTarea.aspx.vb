@@ -12,15 +12,16 @@ Public Class WebForm7
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Page.IsPostBack Then
             dstInstancia = Session("instancia")
+            dapInstancia = Session("adaptador")
         Else
-            dapInstancia = New SqlDataAdapter("select Email, Codigo, HEstimadas, HReales from TareasPersonales", conClsf)
+            dapInstancia = New SqlDataAdapter("select Email, Descripción, HEstimadas, HReales from TareasPersonales", conClsf)
             Dim bldTarea As New SqlCommandBuilder(dapInstancia)
             dapInstancia.Fill(dstInstancia, "Instancia")
             tblInstancia = dstInstancia.Tables("Instancia")
             GridView1.DataSource = tblInstancia
             GridView1.DataBind()
-            Session("datosinstancia") = dstInstancia
-            Session("adaptadorinstancia") = dapInstancia
+            Session("instancia") = dstInstancia
+            Session("adaptador") = dapInstancia
             TareaText.Text = Request.QueryString("codigo")
             HEstText.Text = Request.QueryString("hestimadas")
         End If
@@ -30,9 +31,9 @@ Public Class WebForm7
         tblInstancia = dstInstancia.Tables("Instancia")
         Dim rowInstancia As DataRow = tblInstancia.NewRow()
         rowInstancia("Email") = UsuarioText.Text
-        rowInstancia("Codigo") = TareaText.Text
+        rowInstancia("Descripción") = TareaText.Text
         rowInstancia("HEstimadas") = HEstText.Text
-        rowInstancia("HRealText") = HRealText.Text
+        rowInstancia("HReales") = HRealText.Text
         tblInstancia.Rows.Add(rowInstancia)
         dapInstancia.Update(dstInstancia, "Instancia")
         dstInstancia.AcceptChanges()

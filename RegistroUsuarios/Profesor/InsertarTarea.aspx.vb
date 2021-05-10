@@ -11,6 +11,7 @@ Public Class WebForm10
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Page.IsPostBack Then
             dstTarea = Session("datos")
+            dapTarea = Session("adaptador")
         Else
             dapTarea = New SqlDataAdapter("select * from TareasGenericas", conClsf)
             Dim bldTarea As New SqlCommandBuilder(dapTarea)

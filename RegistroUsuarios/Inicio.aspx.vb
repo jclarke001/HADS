@@ -35,10 +35,17 @@ Public Class WebForm1
 
             If respuesta.Item("pass").Equals(criptocontraseña) Then
                 If respuesta.Item("tipo").Equals("Profesor") Then
-                    cerrarconexion()
-                    System.Web.Security.FormsAuthentication.SetAuthCookie("Profesor", True)
-                    Session("Email") = email
-                    Response.Redirect("~/Profesor/Profesor.aspx")
+                    If email = "vadillo@ehu.es" Then
+                        cerrarconexion()
+                        System.Web.Security.FormsAuthentication.SetAuthCookie("Vadillo", True)
+                        Session("Email") = email
+                        Response.Redirect("~/Profesor/Profesor.aspx")
+                    Else
+                        cerrarconexion()
+                        System.Web.Security.FormsAuthentication.SetAuthCookie("Profesor", True)
+                        Session("Email") = email
+                        Response.Redirect("~/Profesor/Profesor.aspx")
+                    End If
                 Else
                     cerrarconexion()
                     System.Web.Security.FormsAuthentication.SetAuthCookie("Alumno", True)

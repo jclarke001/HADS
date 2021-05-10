@@ -71,12 +71,17 @@ Public Class accesodatosSQL
             comando = New SqlCommand(st, conexion)
             Dim reader = comando.ExecuteReader()
             Dim strResult As String = ""
+            Dim result As Integer
             While reader.Read()
                 strResult = Convert.ToString(reader.Read())
             End While
             reader.Close()
             MsgBox(strResult)
-            Dim result = Convert.ToInt32(strResult)
+            If strResult = "False" Then
+                result = 0
+            Else
+                result = Convert.ToInt32(strResult)
+            End If
             Return (result)
         Catch ex As Exception
             Return ex.Message
